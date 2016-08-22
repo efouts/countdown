@@ -38,5 +38,5 @@ function initializeClock(id, endtime) {
   var timeinterval = setInterval(updateClock, 1000);
 }
 
-var countdown = new Date(1471308800000);
+var countdown = new Date(1472749200000);
 initializeClock('clockdiv', countdown);
