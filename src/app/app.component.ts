@@ -112,10 +112,10 @@ export class AppComponent {
     }
 
     updateClock();
-    var timeinterval = setInterval(updateClock, 1000);
+    const timeinterval = setInterval(updateClock, 1000);
   }
 
-  var countdown = new Date(1477152000000);
+  const countdown = new Date(1477152000000);
   initializeClock('clockdiv', countdown);
 
 }
