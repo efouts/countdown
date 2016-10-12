@@ -1,14 +1,11 @@
 export class CountdownClock {
-  endDate: Date;
   total: number;
   seconds: number;
   minutes: number;
   hours: number;
   days: number;
 
-  constructor(endDate: Date) {
-    this.endDate = endDate;
-  }
+  constructor(public endDate: Date) { }
 
   tick() {
     this.total = this.endDate.valueOf() - new Date().valueOf();
