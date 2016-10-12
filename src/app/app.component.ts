@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Countdown } from './countdown.model';
+import { Component, OnInit } from '@angular/core';
+import { CountdownClock } from './countdownClock';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +22,6 @@ import { Countdown } from './countdown.model';
     #clockdiv{
     	font-family: sans-serif;
     	color: #fff;
-    	display: inline-block;
     	font-weight: 100;
     	text-align: center;
     	font-size: 30px;
@@ -58,27 +57,34 @@ import { Countdown } from './countdown.model';
     </div>
     <div class="row" id="clockdiv">
       <div>
-          <span class="days"></span>
+          <span class="days">{{clock.days}}</span>
           <div class="smalltext">Days</div>
       </div>
       <div>
-          <span class="hours"></span>
+          <span class="hours">{{clock.hours}}</span>
           <div class="smalltext">Hours</div>
       </div>
       <div>
-          <span class="minutes"></span>
+          <span class="minutes">{{clock.minutes}}</span>
           <div class="smalltext">Minutes</div>
       </div>
       <div>
-          <span class="seconds"></span>
+          <span class="seconds">{{clock.seconds}}</span>
           <div class="smalltext">Seconds</div>
       </div>
     </div>
   </div>
   `
 })
-export class AppComponent {
-  title = 'app works!';
+export class AppComponent implements OnInit {
+  clock: CountdownClock
 
+  constructor() {
+    var endDate = new Date(1477152000000);
+    this.clock = new CountdownClock(endDate);
+  }
 
+  ngOnInit() {
+    setInterval(() => this.clock.tick(), 1000);
+  }
 }

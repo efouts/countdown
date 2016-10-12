@@ -1,10 +1,10 @@
-import { EfoutsGithubIoPage } from './app.po';
+import { CountdownPage } from './app.po';
 
-describe('efouts-github-io App', function() {
-  let page: EfoutsGithubIoPage;
+describe('Countdown App', function() {
+  let page: CountdownPage;
 
   beforeEach(() => {
-    page = new EfoutsGithubIoPage();
+    page = new CountdownPage();
   });
 
   it('should display message saying app works', () => {
