@@ -2,30 +2,29 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { RouterModule }   from '@angular/router';
+import { AppRoutingModule } from './app.routing';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { TripsComponent } from './trips/trips.component';
+import { PastComponent } from './past/past.component';
+import { UpcomingComponent } from './upcoming/upcoming.component';
+import { CountdownComponent } from './countdown/countdown.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    TripsComponent
+    TripsComponent,
+    PastComponent,
+    UpcomingComponent,
+    CountdownComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot([
-      {
-        path: 'trips',
-        component: TripsComponent,
-        pathMatch: 'full'
-      }
-    ])
-    ]
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
