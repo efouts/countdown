@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 
@@ -19,7 +19,6 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
   `,
   styles: []
 })
-export class AppComponent implements OnInit {
-  ngOnInit() {
-  }
+export class AppComponent {
+
 }

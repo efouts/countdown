@@ -78,7 +78,6 @@ export class CountdownComponent implements OnInit, OnDestroy {
     const endDate = 1477152000000;
     const colors = [ '#b2ebf2', '#4dd0e1', '#00bcd4', '#006064' ];
     const oppositeColors = [ '#006064', '#00bcd4', '#4dd0e1', '#b2ebf2' ];
-    let i = 0;
     this.subscription = Observable.timer(0, 1000)
       .map(() => endDate - Date.now())
       .map(ms => ({
@@ -87,8 +86,8 @@ export class CountdownComponent implements OnInit, OnDestroy {
         minutes: Math.floor((ms / 1000 / 60) % 60),
         hours: Math.floor((ms / (1000 * 60 * 60)) % 24),
         days: Math.floor(ms / (1000 * 60 * 60 * 24)),
-        color: colors[i++ % colors.length],
-        oppositeColor: oppositeColors[i++ % oppositeColors.length]
+        color: colors[Math.floor(ms / 1000) % colors.length],
+        oppositeColor: oppositeColors[Math.floor(ms / 1000) % oppositeColors.length]
       }))
       .subscribe(clock => {
         // // HACK: YOLO!

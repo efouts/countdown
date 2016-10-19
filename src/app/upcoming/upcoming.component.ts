@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
+export interface Trip {
+  tripName: string;
+  tripStartDate: string;
+  tripEndDate: string;
+  imageUrl: string;
+}
+
 @Component({
   selector: 'app-upcoming',
   template: `
@@ -29,7 +36,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpcomingComponent implements OnInit {
 
-  trips: Trips[] = [{
+  trips: Trip[] = [{
     tripName: "Montreal",
     tripStartDate: "10/27/16",
     tripEndDate: "10/31/16",
