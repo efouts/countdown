@@ -75,7 +75,7 @@ export class CountdownComponent implements OnInit, OnDestroy {
   subscription: Subscription;
 
   ngOnInit() {
-    const endDate = 1477152000000;
+    const endDate = 1477175400000; 
     const colors = [ '#b2ebf2', '#4dd0e1', '#00bcd4', '#006064' ];
     const oppositeColors = [ '#006064', '#00bcd4', '#4dd0e1', '#b2ebf2' ];
     this.subscription = Observable.timer(0, 1000)
